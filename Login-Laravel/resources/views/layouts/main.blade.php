@@ -14,24 +14,17 @@
 
 <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
             </a>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
 
             <div class="navbar-start">
-                <a class="navbar-item">
+                <a href="{{route('index')}}" class="navbar-item">
                     Home
                 </a>
 
@@ -44,10 +37,10 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a href="/create" class="button is-primary">
+                        <a href="{{route('user.create')}}" class="button is-primary">
                             <strong>Criar conta</strong>
                         </a>
-                        <a class="button is-light">
+                        <a href="{{route('user.login')}}" class="button is-light">
                             Entrar
                         </a>
                     </div>
@@ -57,6 +50,8 @@
     </nav>
 
     @yield('content')
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
