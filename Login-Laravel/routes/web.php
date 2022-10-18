@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LoginController::class, 'index'])->name('index');
+Route::get('/', [PageController::class, 'index'])->name('index');
 
-Route::get('/user/create', [LoginController::class, 'create'])->name('user.create');
+Route::get('/user/create', [PageController::class, 'create'])->name('user.create');
 
-Route::get('/user/login', [LoginController::class, 'login'])->name('user.login');
+Route::get('/user/login', [PageController::class, 'login'])->name('user.login');
 
-Route::post('/auth', [LoginController::class, 'auth'])->name('auth.user');
+Route::post('/dash', [LoginController::class, 'dashboard'])->name('auth.user');
 
-Route::post('/user', [LoginController::class, 'store'])->name('create.user');
+Route::post('/createUser', [LoginController::class, 'store'])->name('create');

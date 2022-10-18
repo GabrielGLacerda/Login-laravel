@@ -3,9 +3,8 @@
 @section('title', 'Cadastro')
 
 @section('content')
-<form action="{{route('create.user')}}" method="POST">
+<form action="{{route('create')}}" method="POST">
     @csrf
-
     <div class="form">
 
         <div class="title field">
@@ -76,7 +75,7 @@
         {{-- Button --}}
         <div class="field">
             <p class="control">
-                <button class="button is-success">
+                <button type="submit" class="button is-success" name="btn">
                     Criar conta
                 </button>
             </p>

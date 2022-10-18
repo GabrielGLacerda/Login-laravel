@@ -25,9 +25,8 @@ class UserRequest extends FormRequest
     {
         return [
             'user' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed',
-            'password_confirmation' => 'required|confirmed',
+            'email' => 'required|email|unique:user,email',
+            'password' => 'required|confirmed|min:8',
         ];
     }
 
@@ -37,8 +36,10 @@ class UserRequest extends FormRequest
             'user.required' => 'O nome de usuário é obrigatório',
             'email.required' => 'O email e obrigatório',
             'email.email' => 'Precisa inserir um email válido',
+            'email.unique' => 'O email inserido ja existe',
             'password.required' => 'A senha é obrigatória',
-            'password_confirmation.confirmed' => 'As senhas precisam ser iguais',
+            'password.confirmed' => 'As senhas precisam ser iguais',
+            'password.min' => 'A senha deve conter pelo menos 8 caracteres',
         ];
     }
 }
